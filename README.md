@@ -1,22 +1,29 @@
-# Simple Moving Average Backtester
+## Simple Moving Average Backtester
 
-A Python tool for backtesting Simple Moving Average (SMA) crossover strategies using historical stock data.  
-The tool calculates key performance metrics such as **profit/loss**, **win rate**, and **maximum drawdown** to help evaluate trading strategies.
+A Python tool to backtest trading strategies using simple moving averages (SMA). Easily analyze historical stock data, visualize buy/sell signals, and evaluate performance.
 
+---
 
 ## Features
-- Fetches historical stock price data using [yfinance](https://pypi.org/project/yfinance/).
-- Implements **SMA crossover** strategies.
-- Calculates:
-  - Total Profit/Loss
-  - Win Rate
-  - Maximum Drawdown
-- Easy-to-read performance summary.
 
+- Fetch historical stock price data
+- Compute simple moving averages (SMA)
+- Generate buy/sell signals based on SMA crossovers
+- Plot price data with SMA overlays and trade markers
+- Evaluate strategy returns
 
-## Installation
+---
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Emmanuel-Agyemang/simple-moving-average-backtester.git
-   cd simple-moving-average-backtester
+## Usage Example
+
+```python
+from sma_backtester import SMABacktester
+
+# Initialize backtester with stock ticker and SMA windows
+backtester = SMABacktester(ticker='AAPL', short_window=40, long_window=100)
+
+# Run backtest
+backtester.run_backtest()
+
+# Plot results with buy/sell signals
+backtester.plot_results()
